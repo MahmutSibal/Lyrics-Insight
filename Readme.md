@@ -27,23 +27,6 @@ tqdm	Şarkı yükleme sırasında ilerleme çubuğu
 HTML/CSS	Kullanıcı arayüzü tasarımı
 Bootstrap & Google Fonts	Arayüz estetiğini artırma
 
-📁 Dosya Yapısı
-
-lyrics_insight/
-│
-├── app.py                     # Ana Flask uygulama dosyası
-├── genius.py                 # Genius API üzerinden söz alma işlemleri
-├── nlp.py                    # Helsinki NLP ile çoklu dil desteği (çevrim)
-├── analysis.py               # Kelime analizi ve grafik üretimi
-├── voice.py                  # Sesli özet üretimi (gTTS)
-├── static/
-│   ├── css/style.css         # Arayüz stili
-│   └── plots/                # Grafik ve ses dosyalarının çıktısı
-├── templates/
-│   ├── index.html            # Ana form sayfası
-│   └── result.html           # Analiz sonuçlarının gösterildiği sayfa
-├── requirements.txt          # Kurulması gereken tüm Python paketleri
-└── README.md                 # Proje açıklaması (bu dosya)
 🔧 Kurulum Adımları
 1. Depoyu Klonlayın
 
@@ -108,6 +91,6 @@ Bu uygulama sadece eğitim ve araştırma amaçlı geliştirilmiştir.
 Gerçek zamanlı ve ticari kullanım için daha gelişmiş hata kontrolü, güvenlik ve veritabanı entegrasyonu gereklidir.
 
 🧑‍💻 Geliştirici
-Mahmut Sibal
-@byteByteÖğren
+Mahmut Sibal / Leon Efe Apaydın
+@byteByteÖğren @lleonee
 📍 Türkiye
