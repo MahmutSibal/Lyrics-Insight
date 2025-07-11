@@ -28,9 +28,7 @@ HTML/CSS	Kullanıcı arayüzü tasarımı
 Bootstrap & Google Fonts	Arayüz estetiğini artırma
 
 📁 Dosya Yapısı
-bash
-Copy
-Edit
+
 lyrics_insight/
 │
 ├── app.py                     # Ana Flask uygulama dosyası
