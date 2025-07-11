@@ -1,0 +1,9 @@
+flask
+lyricsgenius
+nltk
+matplotlib
+gtts
+transformers
+sentencepiece
+tqdm
+torch

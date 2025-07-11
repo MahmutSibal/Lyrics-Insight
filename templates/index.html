@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lyrics Insight - Şarkı Sözü Analizi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #2c5364);
+            min-height: 100vh;
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.20);
+            border-radius: 24px;
+            max-width: 420px;
+            margin: 60px auto 0 auto;
+            padding: 40px 36px 32px 36px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+            font-size: 2.2rem;
+            color: #222e50;
+            text-align: center;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #384e77;
+            font-size: 1.05rem;
+        }
+        input[type="text"], select {
+            padding: 12px;
+            border: 1px solid #b4bec9;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus, select:focus {
+            border-color: #6c63ff;
+        }
+        button[type="submit"] {
+            margin-top: 18px;
+            padding: 14px 0;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #6c63ff, #55cdfc);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 14px rgba(108,99,255,0.12);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #55cdfc, #6c63ff);
+            box-shadow: 0 4px 24px rgba(108,99,255,0.18);
+        }
+        .error {
+            margin-top: 18px;
+            color: #d7263d;
+            background: #fbeaec;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        @media (max-width: 500px) {
+            .container {
+                max-width: 95vw;
+                padding: 22px 8vw 18px 8vw;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            button[type="submit"] {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Lyrics Insight</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+            <div>
+                <label for="genius_token">Genius API Token:</label>
+                <input type="text" id="genius_token" name="genius_token" required placeholder="Tokeninizi girin..." autocomplete="off" />
+            </div>
+            <div>
+                <label for="artist_name">Sanatçı Adı:</label>
+                <input type="text" id="artist_name" name="artist_name" required placeholder="Sanatçı adını girin..." autocomplete="off" />
+            </div>
+            <div>
+                <label for="language">Dil Seçimi:</label>
+                <select id="language" name="language" required>
+                    <option value="turkish">Türkçe</option>
+                    <option value="english">English</option>
+                    <option value="german">Deutsch (Almanca)</option>
+                    <option value="french">Français (Fransızca)</option>
+                    <option value="spanish">Español (İspanyolca)</option>
+                    <option value="italian">Italiano (İtalyanca)</option>
+                    <option value="russian">Русский (Rusça)</option>
+                </select>
+            </div>
+            <button type="submit">Analiz Et</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
