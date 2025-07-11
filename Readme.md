@@ -30,7 +30,7 @@ Bootstrap & Google Fonts	Arayüz estetiğini artırma
 🔧 Kurulum Adımları
 1. Depoyu Klonlayın
 
-git clone https://github.com/kullaniciadi/lyrics-insight.git
+git clone https://github.com/MahmutSibal/lyrics-insight.git
 cd lyrics-insight
 
 2. Sanal Ortam Oluşturun ve Aktif Edin
